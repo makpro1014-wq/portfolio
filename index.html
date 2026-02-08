@@ -422,6 +422,152 @@
             letter-spacing: 2px;
         }
 
+        /* Projects Section - Ancient Relics */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #16213e 0%, #0f0f1e 100%);
+            border: 3px solid #3a3a4a;
+            padding: 45px 35px;
+            transition: all 0.5s ease;
+            position: relative;
+            clip-path: polygon(3% 0, 97% 0, 100% 3%, 100% 97%, 97% 100%, 3% 100%, 0 97%, 0 3%);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            box-shadow: 0 0 20px #00ffff;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+            animation: pulse 2s infinite;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.9),
+                0 0 60px rgba(0, 255, 255, 0.3),
+                inset 0 0 40px rgba(0, 255, 255, 0.1);
+            border-color: #fff;
+        }
+
+        .project-icon {
+            font-size: 70px;
+            text-align: center;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.4));
+        }
+
+        .project-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        .project-description {
+            font-size: 17px;
+            color: #d4d4d4;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+
+        .tech-badge {
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            color: #d4d4d4;
+            letter-spacing: 1px;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .tech-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .project-link {
+            display: block;
+            text-align: center;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: #d4d4d4;
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 2px;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        .project-link:hover::before {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+
+        .project-link:hover {
+            color: #fff;
+            border-color: #fff;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .project-link span {
+            position: relative;
+            z-index: 1;
+        }
+
         /* Learning List - Quest Log */
         .learning-list {
             list-style: none;
@@ -598,6 +744,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Lore</a></li>
                 <li><a href="#skills">Charms</a></li>
+                <li><a href="#projects">Relics</a></li>
                 <li><a href="#learning">Quests</a></li>
                 <li><a href="#contact">Seal</a></li>
             </ul>
@@ -656,6 +803,30 @@
                     <h3>Turtle</h3>
                     <p>Drawing forth visual art and geometric wonders from the void through elegant code</p>
                     <div class="skill-mask">~ Dream Wielder ~</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Ancient Relics</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">🎮</div>
+                    <h3>Brick Breaker</h3>
+                    <p class="project-description">
+                        A classic arcade game forged with Pygame. Break through colorful bricks, master paddle control, 
+                        and achieve victory through skill and precision. Features dynamic ball physics, collision detection, 
+                        and randomized color schemes for endless variety.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Pygame</span>
+                        <span class="tech-badge">Game Dev</span>
+                    </div>
+                    <a href="https://github.com/makpro1014-wq/coder-school" target="_blank" class="project-link">
+                        <span>View on GitHub →</span>
+                    </a>
                 </div>
             </div>
         </section>
